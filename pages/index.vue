@@ -13,6 +13,15 @@
                 value=""
               ></v-textarea>
             </v-row>
+            <v-row>
+              <v-btn
+                block
+                elevation="12"
+                large
+              >
+                Save
+              </v-btn>
+            </v-row>
           </v-card-text>
         </v-card>
       </v-col>
