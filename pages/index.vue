@@ -34,7 +34,7 @@
       <v-col cols="12" v-for="(task, i) in taskList" :key="i">
         <v-card elevation="13" outlined @click="finishTask(i)"> 
           <v-card-text>
-            <div :class="task.isDone ? ['text-decoration'] : ''">
+            <div :class="task.isDone ? ['text-decoration'] : 'task-text'">
               {{ task.content }}
             </div>
           </v-card-text>
@@ -69,7 +69,6 @@ export default {
     },
 
     finishTask(idx) {
-      console.log(idx)
       this.taskList[idx].isDone = !this.taskList[idx].isDone;
     }
   },
@@ -79,5 +78,10 @@ export default {
 <style scoped>
   .text-decoration {
     text-decoration: line-through;
+    color: red;
+  }
+
+  .task-text {
+    color: green;
   }
 </style>
