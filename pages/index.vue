@@ -26,10 +26,6 @@
               </v-btn>
             </v-row>
           </v-card-text>
-          <v-card-subtitle>
-            {{ taskContent }} <br />
-            {{ taskList }}
-          </v-card-subtitle>
         </v-card>
       </v-col>
     </v-row>
@@ -52,13 +48,20 @@ export default {
   data() {
     return {
       taskContent: "",
-      taskList: [],
+      taskList: [
+        {content: "1st task to do", isDone: false},
+        {content: "2nd task to do", isDone: false},
+      ],
     };
   },
   methods: {
     onClickSave() {
       if (this.taskContent !== "") {
-        this.taskList.push(this.taskContent);
+        let task = {
+          content: this.taskContent,
+          isDone: false
+        }
+        this.taskList.push(task);
         this.taskContent = "";
       }
     },
